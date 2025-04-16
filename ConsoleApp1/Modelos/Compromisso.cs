@@ -23,8 +23,6 @@ public class Compromisso
         }
 
     }
-    //public string Descricao { get; set; }
-    //public string Local { get; set; }
 
     private void _validarDataInformada(string data) {
         if (!DateTime.TryParseExact(data,
@@ -41,13 +39,13 @@ public class Compromisso
 
     private void _validarDataValidaParaCompromisso() {
         if (_data.Date < DateTime.Now.Date)
-{
-    throw new Exception($"Data {_data:dd/MM/yyyy} é inferior à permitida.");
-}
-else
-{
-    Console.WriteLine("Verificação de Data Permitida bem sucedida!");
-}
+        {
+            throw new Exception($"Data {_data:dd/MM/yyyy} é inferior à permitida.");
+        }
+        else
+        {
+            Console.WriteLine("Verificação de Data Permitida bem sucedida!");
+        } 
     }
     private void _validarHoraInformada(string hora)
     {
