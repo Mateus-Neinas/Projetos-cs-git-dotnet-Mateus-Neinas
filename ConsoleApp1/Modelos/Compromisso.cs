@@ -40,11 +40,14 @@ public class Compromisso
     }
 
     private void _validarDataValidaParaCompromisso() {
-        if (_data<DateTime.Now) {
-            throw new Exception($"Data {_data.ToString("dd/MM/yyyy")} é inferior a permitida.");
-        }
-        else
-            Console.WriteLine("Verificação de Data Permitida bem sucedida!");
+        if (_data.Date < DateTime.Now.Date)
+{
+    throw new Exception($"Data {_data:dd/MM/yyyy} é inferior à permitida.");
+}
+else
+{
+    Console.WriteLine("Verificação de Data Permitida bem sucedida!");
+}
     }
     private void _validarHoraInformada(string hora)
     {
@@ -56,13 +59,17 @@ public class Compromisso
             Console.WriteLine("Verificação formato de hora bem sucedida!");
     }
 
-    private void _validarHoraValidaParaCompromisso() {
-        if (_data.Date == DateTime.Now.Date && _hora <= DateTime.Now.TimeOfDay) {
-            throw new Exception($"Hora {_hora.ToString("HH:mm")} é inferior a permitida.");
-        }
-        else
-            Console.WriteLine("Verificação de Hora Permitida bem sucedida!");
+    private void _validarHoraValidaParaCompromisso()
+{
+    if (_data.Date == DateTime.Now.Date && _hora <= DateTime.Now.TimeOfDay)
+    {
+        throw new Exception($"Hora {_hora.ToString(@"hh\:mm")} é inferior à permitida.");
     }
+    else
+    {
+        Console.WriteLine("Verificação de Hora Permitida bem sucedida!");
+    }
+}
 
     public DateTime DataHoraCompleta => _data.Date + _hora;
 

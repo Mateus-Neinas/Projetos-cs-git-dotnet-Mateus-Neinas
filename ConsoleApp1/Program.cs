@@ -16,7 +16,7 @@ while (true) {
     }
 }
 
-Console.Write("Digite a hora do compromisso (HH:mm)");
+Console.Write("Digite a hora do compromisso (HH:mm):");
 
 while (true) {
     try {
